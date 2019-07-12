@@ -17,3 +17,74 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const cardsCont = document.querySelector('.cards-container')
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(data => {
+        console.log('arrays', data.data.articles)
+        const arrJava = data.data.articles.javascript
+        console.log('arrJava', arrJava)
+        arrJava.forEach(element => {
+            cardsCont.appendChild(createCard(element))            
+        })
+        const arrBoot =data.data.articles.bootstrap
+        arrBoot.forEach(element => {
+            cardsCont.appendChild(createCard(element))  
+        })
+        const arrTech =data.data.articles.technology
+        arrTech.forEach(element => {
+            cardsCont.appendChild(createCard(element))  
+        })
+        const arrJquery =data.data.articles.jquery
+        arrJquery.forEach(element => {
+            cardsCont.appendChild(createCard(element))  
+        })
+        const arrNode =data.data.articles.node
+        arrNode.forEach(element => {
+            cardsCont.appendChild(createCard(element))  
+        })
+
+        
+    })
+    .catch(error => {
+        console.log('This is not working', error)
+    })
+
+
+
+
+function createCard(object){
+
+    //create elements
+    const cardDiv = document.createElement('div')
+    const cardDHead = document.createElement('div')
+    const cardDAuth = document.createElement('div')
+    const cardDImCont = document.createElement('div')
+    const cardImg = document.createElement('img')
+    const cardSpan = document.createElement('span')
+
+    //set styling
+    cardDiv.classList.add('card')
+    cardDHead.classList.add('headline')
+    cardDAuth.classList.add('author')
+    cardDImCont.classList.add('img-container')
+
+    //connect new elements
+    cardDiv.appendChild(cardDHead)
+    cardDiv.appendChild(cardDAuth)
+    cardDAuth.appendChild(cardDImCont)
+    cardDImCont.appendChild(cardImg)
+    cardDAuth.appendChild(cardSpan)
+
+    cardDHead.textContent = object.headline
+    cardImg.src = object.authorPhoto
+    cardSpan.textContent = `By ${object.authorName}`
+
+
+    return cardDiv
+}
+
+
+
+
