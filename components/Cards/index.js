@@ -22,7 +22,13 @@ const cardsCont = document.querySelector('.cards-container')
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(data => {
-        console.log('arrays', data.data.articles.bootstrap)
+        console.log('arrays', data.data.articles)
+        const artObj = data.data.articles
+        const artobjtoArr = Object.entries(artObj)
+        console.log('artObj:', artObj)
+        console.log('artobjtoArr', artobjtoArr)
+
+
     })
 
 
