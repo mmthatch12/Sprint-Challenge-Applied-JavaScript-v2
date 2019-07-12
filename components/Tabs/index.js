@@ -16,6 +16,14 @@ const topics = document.querySelector('.topics')
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(data => {
         console.log('the array:', data.data)
+        const tops = data.data.topics
+        tops.forEach(topic => {
+            const topix = Tabs(topic)
+            topics.appendChild(topix)
+        });
+    })
+    .catch(error => {
+        console.log('This is not working', error)
     })
 
 
