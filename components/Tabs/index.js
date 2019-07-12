@@ -8,4 +8,15 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+console.log(axios.get('https://lambda-times-backend.herokuapp.com/topics'))
+
+
+function Tabs(object) {
+    let tabsDiv = document.createElement('div')
+
+    tabsDiv.classList.add('tab')
+
+    tabsDiv.textContent = object.topics
+
+    return tabsDiv
+}
