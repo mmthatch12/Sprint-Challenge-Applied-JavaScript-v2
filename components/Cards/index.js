@@ -24,6 +24,11 @@ console.log(axios.get('https://lambda-times-backend.herokuapp.com/articles'))
 
 
 
+function createCard(){
+    const cardDiv = document.createElement('div')
+    const cardDiv = document.createElement('div')
+}
+
 
 
 
