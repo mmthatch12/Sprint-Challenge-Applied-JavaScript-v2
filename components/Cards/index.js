@@ -25,8 +25,29 @@ console.log(axios.get('https://lambda-times-backend.herokuapp.com/articles'))
 
 
 function createCard(){
+
+    //create elements
     const cardDiv = document.createElement('div')
-    const cardDiv = document.createElement('div')
+    const cardDHead = document.createElement('div')
+    const cardDAuth = document.createElement('div')
+    const cardDImCont = document.createElement('div')
+    const cardImg = document.createElement('img')
+    const cardSpan = document.createElement('span')
+
+    //set styling
+    cardDiv.classList.add('card')
+    cardDHead.classList.add('headline')
+    cardDAuth.classList.add('author')
+    cardDImCont.classList.add('img-container')
+
+    //connect new elements
+    cardDiv.appendChild(cardDHead)
+    cardDiv.appendChild(cardDAuth)
+    cardDAuth.appendChild(cardDImCont)
+    cardDImCont.appendChild(cardImg)
+    cardDAuth.appendChild(cardSpan)
+
+    return cardDiv
 }
 
 
