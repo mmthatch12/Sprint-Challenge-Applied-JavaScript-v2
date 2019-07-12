@@ -8,7 +8,7 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-const topics = document.querySelector('.topics')
+const theTopics = document.querySelector('.topics')
 
 
 
@@ -19,7 +19,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         const tops = data.data.topics
         tops.forEach(topic => {
             const topix = Tabs(topic)
-            topics.appendChild(topix)
+            theTopics.appendChild(topix)
         });
     })
     .catch(error => {
@@ -32,7 +32,7 @@ function Tabs(object) {
 
     tabsDiv.classList.add('tab')
 
-    tabsDiv.textContent = object.topics
+    tabsDiv.textContent = object
 
     return tabsDiv
 }
