@@ -32,10 +32,6 @@ function Tabs(object) {
 
     tabsDiv.classList.add('tab')
 
-    tabsDiv.addEventListener('click', event => {
-        tabsDiv.classList.toggle('active-tab')
-    })
-
     tabsDiv.textContent = object
 
     return tabsDiv
