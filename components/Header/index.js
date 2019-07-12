@@ -11,5 +11,14 @@
 
 function Header() {
     let headerDiv = document.createElement('div')
-    
+    let headerSDate = document.createElement('span')
+    let headerH1 = document.createElement('h1')
+    let headerSTemp = document.createElement('span')
+
+    headerDiv.classList.add('header')
+    headerSDate.classList.add('date')
+    headerSTemp.classList.add('temp')
+
+
+
 }
